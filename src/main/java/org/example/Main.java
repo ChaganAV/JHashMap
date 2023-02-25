@@ -9,7 +9,7 @@ public class Main {
         hashMap.put("Первый","Вася");
         hashMap.put("Пятый","Кеша");
         hashMap.put("Третий","Петя");
-        hashMap.putIfAbsent("Четвертый","Катя");
+        hashMap.putIfAbsent("Четвертый","Миша");
         hashMap.forEach((k,v)-> System.out.println(k+": "+v));
         System.out.println("-".repeat(15));
         for(String v: hashMap.values()){
@@ -32,8 +32,8 @@ public class Main {
         hashMap2.put("Шестой","Елена");
         for(String k: hashMap2.keySet()){
             //hashMap2.merge(k,hashMap.getOrDefault(k,"No"),String::concat);
-            hashMap2.merge(k,hashMap.getOrDefault(k,"No"),(key,val)-> key + " + "+val);
-            System.out.println(hashMap2.get(k));
+            hashMap2.merge(k,hashMap.getOrDefault(k,"Одна осталась (:"),(key,val)-> key + " + "+val);
+            System.out.println(hashMap2.get(k).replace("<","").replace(">",""));
         }
     }
 }
